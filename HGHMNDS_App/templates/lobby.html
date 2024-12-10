@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGHMNDS | Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <nav>
+                    <div class="nav-left">
+                        <ul>
+                            <li><a href="{% url 'lobby' %}"><h1 class="logo">HGHMNDS.</h1></a></li>
+                            <li><a href="#rush-hours"><span>SHOP HOURS</span></a></li>
+                            <li><a href="#location"><span>LOCATION</span></a></li>
+                            <li><a href="#contact"><span>CONTACT</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-right">
+                        <ul>
+                            <li><button popovertarget="search-nav"><i class="fas fa-search" style="font-size: 20px;"></i></button></li>
+                            <li><button popovertarget="user-nav"><i class="fas fa-user" style="font-size: 20px;"></i></button></li>
+                            <li><button popovertarget="cart-nav"><i class="fas fa-cart-shopping" style="font-size: 20px;"></i></button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>            
+        </header>
+        <main>
+            <div id="search-nav" popover>
+                Jumbo
+            </div>
+            <div id="user-nav" popover>
+                <h1>Already have an account?</h1>
+                <button class="rdir" onclick="window.location.href='{% url 'login' %}'">Login</button>
+                <h1>Don't have an account?</h1>
+                <button class="rdir" onclick="window.location.href='{% url 'register' %}'">Register</button>
+            </div>            
+            <div id="cart-nav" popover>
+                HATDOG
+            </div>
+            
+            <div class="sidebar">
+                <div class="logo_content">
+                    <div class="logo">
+                        <h1 class="logo_name">HGHMNDS.</h1>
+                    </div>
+                    <i class="fas fa-bars" id='btn'></i>
+                </div>
+                <ul class="nav-list">
+                    <li>
+                        <i class="fas fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search...">
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-bag-shopping"></i>
+                            <span class="links_name">SHOP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-location-dot"></i>
+                            <span class="links_name">LOCATIONS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-bolt"></i>
+                            <span class="links_name">CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="profile_content">
+                    <div class="profile">
+                        <ul>
+                            <li><button popovertarget="user-nav"><i class="fas fa-user" style="font-size: 20px;"></i></button></li>
+                            <li><button popovertarget="cart-nav"><i class="fas fa-cart-shopping" style="font-size: 20px;"></i></button></li>
+                            <li><button popovertarget="cart-nav"><i class="fas fa-right-from-bracket" style="font-size: 20px;"></i></button></li>                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </main> 
+    </div>
+</body>
+
+<script src="{% static "js/script.js" %}"></script>
+
+</html>
